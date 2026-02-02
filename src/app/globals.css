@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* In your global CSS */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  /* color: #2a4365; matte blue */
+}
+
+body {
+  font-family: var(--font-body);
+  /* color: #1a202c; */
+}
+
+/* .accent {
+  color: #d69e2e; /* strong yellow */
+/* } */ 
