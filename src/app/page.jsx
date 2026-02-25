@@ -135,13 +135,12 @@ const HeroSection = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-all duration-1500 ease-in-out ${
-              index === activeIndex
+            className={`absolute inset-0 w-full h-full transition-all duration-1500 ease-in-out ${index === activeIndex
                 ? "opacity-100 translate-x-0"
                 : index < activeIndex
                   ? "opacity-0 -translate-x-full"
                   : "opacity-0 translate-x-full"
-            }`}
+              }`}
           >
             <div className="absolute inset-0 z-5" />
             <Image
@@ -238,9 +237,8 @@ const HeroSection = () => {
           <button
             key={index}
             onClick={() => handleSlideChange(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-              index === activeIndex ? "bg-orange-500 scale-125" : "bg-white/50 hover:bg-white/70"
-            }`}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-orange-500 scale-125" : "bg-white/50 hover:bg-white/70"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
@@ -372,7 +370,7 @@ const AboutSection = () => {
 
 
 
-const People=()=> {
+const People = () => {
   return (
     <div className="min-h-200px bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4" id="People">
       <div className="max-w-6xl mx-auto">
@@ -431,7 +429,7 @@ const People=()=> {
 
 // ==================== HOW YOU'LL LEARN SECTION ====================
 const HowYoullLearnSection = () => {
-  
+
 
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-blue-50 to-orange-50">
@@ -514,8 +512,8 @@ const CoursesSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {allCourses.slice(0, 3).map((course, idx) => {
             // Determine the correct category path based on whether course is available or coming soon
-            const categoryPath = availableCourses.some(c => c.title === course.title) 
-              ? "available" 
+            const categoryPath = availableCourses.some(c => c.title === course.title)
+              ? "available"
               : "coming-soon"
             return (
               <motion.div
@@ -628,17 +626,15 @@ const PricingSection = () => {
           <div className="inline-flex bg-white rounded-full p-1 shadow-lg">
             <button
               onClick={() => setSelectedTab("individuals")}
-              className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
-                selectedTab === "individuals" ? "bg-blue-900 text-white shadow-lg" : "text-blue-900 hover:bg-blue-50"
-              }`}
+              className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${selectedTab === "individuals" ? "bg-blue-900 text-white shadow-lg" : "text-blue-900 hover:bg-blue-50"
+                }`}
             >
               Individuals
             </button>
             <button
               onClick={() => setSelectedTab("institutions")}
-              className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
-                selectedTab === "institutions" ? "bg-blue-900 text-white shadow-lg" : "text-blue-900 hover:bg-blue-50"
-              }`}
+              className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${selectedTab === "institutions" ? "bg-blue-900 text-white shadow-lg" : "text-blue-900 hover:bg-blue-50"
+                }`}
             >
               Academic Institutions
             </button>
@@ -649,9 +645,8 @@ const PricingSection = () => {
           {(selectedTab === "individuals" ? individualPlans : institutionPlans).map((plan, index) => (
             <motion.div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 sm:p-8 ${
-                plan.popular ? "ring-2 ring-orange-500 scale-105" : ""
-              }`}
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 sm:p-8 ${plan.popular ? "ring-2 ring-orange-500 scale-105" : ""
+                }`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -668,7 +663,6 @@ const PricingSection = () => {
 
               <div className="text-center mb-6 sm:mb-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-2">{plan.name}</h3>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-500 mb-2">{plan.price}</div>
                 {plan.subtitle && <p className="text-gray-600 text-xs sm:text-sm">{plan.subtitle}</p>}
               </div>
 
@@ -682,11 +676,10 @@ const PricingSection = () => {
               </ul>
 
               <Button
-                className={`w-full py-2 sm:py-3 font-semibold rounded-lg transition-all duration-300 text-sm sm:text-base ${
-                  plan.popular
+                className={`w-full py-2 sm:py-3 font-semibold rounded-lg transition-all duration-300 text-sm sm:text-base ${plan.popular
                     ? "bg-orange-500 hover:bg-orange-600 text-white"
                     : "bg-blue-900 hover:bg-blue-800 text-white"
-                }`}
+                  }`}
               >
                 <Link href="#contact">Get Started</Link>
               </Button>
@@ -804,9 +797,8 @@ const TestimonialsSection = () => {
                   setIsAutoPlaying(false)
                   setTimeout(() => setIsAutoPlaying(true), 10000)
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentIndex ? "bg-blue-900 w-8 md:w-6" : "bg-gray-300 hover:bg-gray-400 w-3 md:w-3"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentIndex ? "bg-blue-900 w-8 md:w-6" : "bg-gray-300 hover:bg-gray-400 w-3 md:w-3"
+                  }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
@@ -858,13 +850,12 @@ const CommunitySection = () => {
             {images.map((src, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 w-full h-full transition-all duration-500 ease-in-out ${
-                  index === activeIndex
+                className={`absolute inset-0 w-full h-full transition-all duration-500 ease-in-out ${index === activeIndex
                     ? "opacity-100 translate-x-0"
                     : index < activeIndex
                       ? "opacity-0 -translate-x-full"
                       : "opacity-0 translate-x-full"
-                }`}
+                  }`}
               >
                 <Image
                   src={src || "/12.jpg"}
@@ -897,9 +888,8 @@ const CommunitySection = () => {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/70"
-                  }`}
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/70"
+                    }`}
                   aria-label={`Go to image ${index + 1}`}
                 />
               ))}
@@ -920,42 +910,42 @@ const BlogsSection = () => {
   const [showAllBlogs, setShowAllBlogs] = useState(false)
 
   const blogs = [
-  {
-    title: "The Rise of Autonomous AI Agents",
-    excerpt: "How next-generation AI agents are becoming capable of independent decision-making and workflow automation.",
-    image: "/blog_1.jpg",
-    date: "Dec 15, 2024",
-    category: "Technology"
-  },
-  {
-    title: "Cybersecurity Trends for 2025",
-    excerpt: "A look at emerging threats and the advanced security systems designed to defend against them.",
-    image: "/blog_2.webp",
-    date: "Dec 11, 2024",
-    category: "Security"
-  },
-  {
-    title: "Quantum Computing Breakthroughs 2025",
-    excerpt: "Researchers achieve new milestones in quantum error correction, bringing practical quantum computing closer.",
-    image: "/blog_3.webp",
-    date: "Dec 14, 2024",
-    category: "Technology"
-  },
-  {
-    title: "AI-Powered Developer Tools",
-    excerpt: "From code generation to debugging, AI is transforming the entire software development lifecycle.",
-    image: "/blog_4.webp",
-    date: "Dec 12, 2024",
-    category: "Industry"
-  },
-  {
-    title: "Future of Work: Human + AI Collaboration",
-    excerpt: "How workplaces are evolving as AI becomes an essential assistant in everyday operations.",
-    image: "/blog_5.webp",
-    date: "Dec 10, 2024",
-    category: "Career"
-  }
-]
+    {
+      title: "The Rise of Autonomous AI Agents",
+      excerpt: "How next-generation AI agents are becoming capable of independent decision-making and workflow automation.",
+      image: "/blog_1.jpg",
+      date: "Dec 15, 2024",
+      category: "Technology"
+    },
+    {
+      title: "Cybersecurity Trends for 2025",
+      excerpt: "A look at emerging threats and the advanced security systems designed to defend against them.",
+      image: "/blog_2.webp",
+      date: "Dec 11, 2024",
+      category: "Security"
+    },
+    {
+      title: "Quantum Computing Breakthroughs 2025",
+      excerpt: "Researchers achieve new milestones in quantum error correction, bringing practical quantum computing closer.",
+      image: "/blog_3.webp",
+      date: "Dec 14, 2024",
+      category: "Technology"
+    },
+    {
+      title: "AI-Powered Developer Tools",
+      excerpt: "From code generation to debugging, AI is transforming the entire software development lifecycle.",
+      image: "/blog_4.webp",
+      date: "Dec 12, 2024",
+      category: "Industry"
+    },
+    {
+      title: "Future of Work: Human + AI Collaboration",
+      excerpt: "How workplaces are evolving as AI becomes an essential assistant in everyday operations.",
+      image: "/blog_5.webp",
+      date: "Dec 10, 2024",
+      category: "Career"
+    }
+  ]
 
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
@@ -1230,7 +1220,7 @@ export default function HomePage() {
         <AboutSection />
       </div>
       <div id="People">
-        <People/>
+        <People />
       </div>
       <div id="how-youll-learn">
         <HowYoullLearnSection />
