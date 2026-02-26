@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Trophy, Users } from "lucide-react"
-import Certificate from "../assets/onyx certificate.jpg"
+import Certificate from "../assets/onyx-certificate.jpg"
 
 export default function EducationLanding() {
   return (
