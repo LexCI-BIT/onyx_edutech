@@ -80,6 +80,7 @@ const Footer = () => {
                 ["Community", "#community"],
                 ["Blogs", "#blogs"],
                 ["Contact Us", "#contact"],
+                ["Call Us: +91 8977220902", "tel:+918977220902"],
               ].map((item, index) => (
                 <li key={index}>
                   <a
