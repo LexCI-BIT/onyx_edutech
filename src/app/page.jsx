@@ -1099,10 +1099,10 @@ const ContactSection = () => {
               <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Quick Links</h4>
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { name: "FAQs", url: "#faqs" },
+                  { name: "FAQs", url: "/faqs" },
                   { name: "Support", url: "mailto:support@onyxedutech.com" },
                   { name: "Partnerships", url: "mailto:support@onyxedutech.com" },
-                  { name: "Careers", url: "#careers" }
+                  { name: "Careers", url: "/#careers" }
                 ].map((item) => (
                   <Link
                     key={item.name}
@@ -1125,6 +1125,7 @@ const ContactSection = () => {
 const ContactModal = ({ show, onClose }) => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
   const [submitted, setSubmitted] = useState(false)
 
@@ -1140,7 +1141,7 @@ const ContactModal = ({ show, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Contact form submit:", { name, email, message })
+    console.log("Contact form submit:", { name, email, phone, message })
     setSubmitted(true)
   }
 
@@ -1179,6 +1180,17 @@ const ContactModal = ({ show, onClose }) => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email"
+                  className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Your Phone Number"
                   className="w-full px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500"
                   required
                 />
