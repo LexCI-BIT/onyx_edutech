@@ -1101,7 +1101,7 @@ const ContactSection = () => {
                 {[
                   { name: "FAQs", url: "/faqs" },
                   { name: "Support", url: "/#contact" },
-                  { name: "Partnerships", url: "/#contact" },
+                  { name: "Partnerships", url: "/#People" },
                   { name: "Careers", url: "/#careers" }
                 ].map((item) => (
                   <Link
