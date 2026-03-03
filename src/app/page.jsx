@@ -136,10 +136,10 @@ const HeroSection = () => {
           <div
             key={index}
             className={`absolute inset-0 w-full h-full transition-all duration-1500 ease-in-out ${index === activeIndex
-                ? "opacity-100 translate-x-0"
-                : index < activeIndex
-                  ? "opacity-0 -translate-x-full"
-                  : "opacity-0 translate-x-full"
+              ? "opacity-100 translate-x-0"
+              : index < activeIndex
+                ? "opacity-0 -translate-x-full"
+                : "opacity-0 translate-x-full"
               }`}
           >
             <div className="absolute inset-0 z-5" />
@@ -677,8 +677,8 @@ const PricingSection = () => {
 
               <Button
                 className={`w-full py-2 sm:py-3 font-semibold rounded-lg transition-all duration-300 text-sm sm:text-base ${plan.popular
-                    ? "bg-orange-500 hover:bg-orange-600 text-white"
-                    : "bg-blue-900 hover:bg-blue-800 text-white"
+                  ? "bg-orange-500 hover:bg-orange-600 text-white"
+                  : "bg-blue-900 hover:bg-blue-800 text-white"
                   }`}
               >
                 <Link href="#contact">Get Started</Link>
@@ -851,10 +851,10 @@ const CommunitySection = () => {
               <div
                 key={index}
                 className={`absolute inset-0 w-full h-full transition-all duration-500 ease-in-out ${index === activeIndex
-                    ? "opacity-100 translate-x-0"
-                    : index < activeIndex
-                      ? "opacity-0 -translate-x-full"
-                      : "opacity-0 translate-x-full"
+                  ? "opacity-100 translate-x-0"
+                  : index < activeIndex
+                    ? "opacity-0 -translate-x-full"
+                    : "opacity-0 translate-x-full"
                   }`}
               >
                 <Image
@@ -1049,6 +1049,13 @@ const ContactSection = () => {
                 />
               </div>
               <div>
+                <input
+                  type="tel"
+                  placeholder="Your Phone Number"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                />
+              </div>
+              <div>
                 <textarea
                   rows={4}
                   placeholder="Your Query"
@@ -1091,13 +1098,18 @@ const ContactSection = () => {
             <div>
               <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Quick Links</h4>
               <div className="grid grid-cols-2 gap-2">
-                {["FAQs", "Support", "Partnerships", "Careers"].map((link) => (
+                {[
+                  { name: "FAQs", url: "#faqs" },
+                  { name: "Support", url: "mailto:support@onyxedutech.com" },
+                  { name: "Partnerships", url: "mailto:support@onyxedutech.com" },
+                  { name: "Careers", url: "#careers" }
+                ].map((item) => (
                   <Link
-                    key={link}
-                    href={`/${link.toLowerCase()}`}
+                    key={item.name}
+                    href={item.url}
                     className="text-white/80 hover:text-orange-500 transition-colors duration-300 text-sm sm:text-base"
                   >
-                    {link}
+                    {item.name}
                   </Link>
                 ))}
               </div>
