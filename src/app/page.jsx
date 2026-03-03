@@ -1100,8 +1100,8 @@ const ContactSection = () => {
               <div className="grid grid-cols-2 gap-2">
                 {[
                   { name: "FAQs", url: "/faqs" },
-                  { name: "Support", url: "mailto:support@onyxedutech.com" },
-                  { name: "Partnerships", url: "mailto:support@onyxedutech.com" },
+                  { name: "Support", url: "/#contact" },
+                  { name: "Partnerships", url: "/#contact" },
                   { name: "Careers", url: "/#careers" }
                 ].map((item) => (
                   <Link
