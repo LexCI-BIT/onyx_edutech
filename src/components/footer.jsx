@@ -70,16 +70,17 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 text-sm">
               {[
-                ["Home", "#home"],
-                ["About Us", "#about"],
-                ["Team", "#People"],
-                ["How You'll Learn", "#how-youll-learn"],
-                ["Courses", "#courses"],
-                ["Why Us", "#why-us"],
-                ["Pricing", "#pricing"],
-                ["Community", "#community"],
-                ["Blogs", "#blogs"],
-                ["Contact Us", "#contact"],
+                ["Home", "/#home"],
+                ["About Us", "/#about"],
+                ["Team", "/#People"],
+                ["How You'll Learn", "/#how-youll-learn"],
+                ["Courses", "/#courses"],
+                ["Why Us", "/#why-us"],
+                ["Pricing", "/#pricing"],
+                ["Community", "/#community"],
+                ["Blogs", "/#blogs"],
+                ["FAQs", "/faqs"],
+                ["Contact Us", "/#contact"],
                 ["Call Us: +91 8977220902", "tel:+918977220902"],
               ].map((item, index) => (
                 <li key={index}>
