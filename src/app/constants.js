@@ -132,26 +132,19 @@ export const teamMembers = [
   },
   {
     id: 2,
-    name: "Dheeraj Koyyada",
-    position: "The Hustle Architect | COO",
-    image: "/Dheeraj_Koyyada.jpeg",
-    linkedin: "https://www.linkedin.com/in/dheeraj-koyyada/",
-  },
-  {
-    id: 3,
     name: "Phani Kumar",
     position: "The Integrator  | CAO",
     image: "/Phani_Kumar.jpeg",
     linkedin: "https://www.linkedin.com/in/phani-kumar-82b6b1286/",
   },
   {
-    id: 4,
+    id: 3,
     name: "Vyshnava Kiriti",
     position: "The Rain Maker | Global Sales Head",
     image: "/Vyshnava_kiriti.jpg",
   },
   {
-    id: 5,
+    id: 4,
     name: "Poojitha Khammampati",
     position: "The Heartbeat | Human Resources Manager",
     image: "/Poojitha_Khammampati.jpg",

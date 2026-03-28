@@ -249,28 +249,6 @@ const HeroSection = () => {
 
 // ==================== ABOUT SECTION COMPONENT ====================
 const AboutSection = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const videoRef = useRef(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handlePlay = () => setIsVideoPlaying(true)
-    const handlePause = () => setIsVideoPlaying(false)
-    const handleEnded = () => setIsVideoPlaying(false)
-
-    video.addEventListener("play", handlePlay)
-    video.addEventListener("pause", handlePause)
-    video.addEventListener("ended", handleEnded)
-
-    return () => {
-      video.removeEventListener("play", handlePlay)
-      video.removeEventListener("pause", handlePause)
-      video.removeEventListener("ended", handleEnded)
-    }
-  }, [])
-
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -289,73 +267,44 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-16 sm:mb-20">
+        <div className="max-w-4xl mx-auto mb-16 sm:mb-20 space-y-12">
           <motion.div
-            className="relative order-2 lg:order-1"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="space-y-6 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[550px] bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 rounded-lg overflow-hidden shadow-2xl">
-              <video
-                ref={videoRef}
-                className="absolute inset-0 w-full h-full object-cover"
-                controls
-                poster="/thumb.jpg"
-              >
-                <source src="/COO_Message.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              {!isVideoPlaying && (
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center pointer-events-none transition-opacity duration-300">
-                  <div className="text-center text-white px-4">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2">COO's Message</h3>
-                    <p className="text-sm sm:text-base lg:text-lg">Mission, Vision & Journey</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="space-y-4 sm:space-y-6 order-1 lg:order-2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="space-y-3 sm:space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-orange-100 rounded-full text-orange-800 text-xs sm:text-sm font-medium">
-                <Target className="w-3 h-3 sm:w-4 sm:h-4" />
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-800 text-sm font-medium mx-auto">
+                <Target className="w-4 h-4" />
                 Our Mission
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-900">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900">
                 Transforming Dreamers into Professionals
               </h3>
             </div>
 
-            <div className="space-y-3 sm:space-y-4 text-gray-700">
-              <p className="text-base sm:text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-700">
+              <p className="text-lg sm:text-xl leading-relaxed">
                 At Onyx EduTech, we believe your career should be built on skills, not just marksheets. Join our
                 learning community where knowledge meets opportunities.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed">
+              <p className="text-lg sm:text-xl leading-relaxed">
                 We're not here to burn holes in your pocket. Our industry-aligned curriculum is designed to make
                 dreamers into entrepreneurs, innovators, and job-ready professionals.
               </p>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 pt-3 sm:pt-4">
-                <div className="flex items-center w-full gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-blue-900">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="flex flex-wrap items-center justify-center gap-6 pt-6">
+                <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-blue-900 bg-blue-50 px-4 py-2 rounded-lg">
+                  <Award className="w-5 h-5 text-blue-800" />
                   DPIIT Recognized
                 </div>
-                <div className="flex items-center w-full gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-blue-900">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-blue-900 bg-blue-50 px-4 py-2 rounded-lg">
+                  <Award className="w-5 h-5 text-blue-800" />
                   AICTE Approved
                 </div>
-                <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-blue-900">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-blue-900 bg-blue-50 px-4 py-2 rounded-lg">
+                  <Award className="w-5 h-5 text-blue-800" />
                   NSDC Certified
                 </div>
               </div>
@@ -382,7 +331,7 @@ const People = () => {
           transition={{ duration: 0.8 }}
         >
           <h3 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-8 sm:mb-12">Team @ Onyx</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
