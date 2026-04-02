@@ -12,6 +12,8 @@ import ScrollToTopButton from "@/components/scroll";
 import { CenteredToastProvider } from "@/components/ui/centered-toast-provider";
 import { ChatlingWidget } from "@/components/ChatlingWidget.jsx";
 
+import WhatsAppButton from "@/components/whatsapp-button";
+
 // Configure your chosen fonts
 const headingFont = Nunito_Sans({
     subsets: ["latin"],
@@ -36,7 +38,7 @@ export default function RootLayout({ children }) {
             lang="en"
             className={`${headingFont.variable} ${bodyFont.variable}`}
         >
-             <head>
+            <head>
                 <link rel="icon" href="/onyx_logo (1).png" />
             </head>
             <body className={`${bodyFont.className} m-0 p-0`}>
@@ -48,6 +50,7 @@ export default function RootLayout({ children }) {
                 </main>
                 <Footer />
                 <ScrollToTopButton />
+                <WhatsAppButton />
             </body>
         </html>
     );
