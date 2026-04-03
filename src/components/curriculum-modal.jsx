@@ -20,18 +20,31 @@ export default function CurriculumModal({ open, onClose, courseName, courses = [
     }
   }, [open, courseName])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Placeholder: integrate with backend or form service
-    console.log("Curriculum request:", {
-      fullName,
-      phoneNumber,
-      email,
-      collegeName,
-      selectedCourse,
-      feedback,
-    })
     setIsSubmitted(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName,
+          phoneNumber,
+          email,
+          message: `College Name: ${collegeName}\nSelected Course: ${selectedCourse}\nFeedback: ${feedback}`,
+          courseName,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to submit the form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   }
 
   const handleClose = () => {

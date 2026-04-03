@@ -10,17 +10,30 @@ export default function ContactModal({ open, onClose, courseName }) {
   const [message, setMessage] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Placeholder: integrate with backend or form service
-    console.log("Contact request:", {
-      fullName,
-      phoneNumber,
-      email,
-      message,
-      courseName,
-    })
     setIsSubmitted(true)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName,
+          phoneNumber,
+          email,
+          message,
+          courseName,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to submit the form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   }
 
   const handleClose = () => {

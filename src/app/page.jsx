@@ -971,6 +971,37 @@ const BlogsSection = () => {
 
 // ==================== CONTACT SECTION ====================
 const ContactSection = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [message, setMessage] = useState("")
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setSubmitted(true)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: name,
+          phoneNumber: phone,
+          email,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to submit the form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  }
+
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-blue-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -982,39 +1013,58 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">Get in Touch</h2>
-            <form className="space-y-4 sm:space-y-6">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                />
+            {!submitted ? (
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your Name"
+                    required
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your Email"
+                    required
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Your Phone Number"
+                    required
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Your Query"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none text-sm sm:text-base"
+                  ></textarea>
+                </div>
+                <Button type="submit" className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2 sm:py-3 font-semibold rounded-lg w-full text-sm sm:text-base">
+                  Send Message
+                </Button>
+              </form>
+            ) : (
+              <div className="text-center py-10 bg-white/5 rounded-xl border border-white/10">
+                <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                <p className="text-white/80">Your message has been sent successfully. We'll get back to you soon.</p>
               </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                />
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  placeholder="Your Phone Number"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                />
-              </div>
-              <div>
-                <textarea
-                  rows={4}
-                  placeholder="Your Query"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none text-sm sm:text-base"
-                ></textarea>
-              </div>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2 sm:py-3 font-semibold rounded-lg w-full text-sm sm:text-base">
-                Send Message
-              </Button>
-            </form>
+            )}
           </motion.div>
 
           <motion.div
@@ -1088,10 +1138,29 @@ const ContactModal = ({ show, onClose }) => {
 
   if (!show) return null
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Contact form submit:", { name, email, phone, message })
     setSubmitted(true)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: name,
+          phoneNumber: phone,
+          email,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to submit the form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   }
 
   return (
