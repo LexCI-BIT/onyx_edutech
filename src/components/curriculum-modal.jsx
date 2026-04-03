@@ -25,22 +25,26 @@ export default function CurriculumModal({ open, onClose, courseName, courses = [
     setIsSubmitted(true)
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formsubmit.co/ajax/Info@onyxedutech.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           fullName,
           phoneNumber,
           email,
-          message: `College Name: ${collegeName}\nSelected Course: ${selectedCourse}\nFeedback: ${feedback}`,
-          courseName,
+          collegeName,
+          selectedCourse,
+          feedback,
+          _subject: `New Curriculum Request: ${selectedCourse || 'General'}`,
+          _honey: "", // Honeypot to prevent spam
         }),
       });
 
       if (!response.ok) {
-        console.error('Failed to submit the form');
+        console.error('Failed to submit to FormSubmit.co');
       }
     } catch (error) {
       console.error('Error submitting form:', error);

@@ -14,10 +14,11 @@ export default function ContactModal({ open, onClose, courseName }) {
     e.preventDefault()
     setIsSubmitted(true)
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formsubmit.co/ajax/Info@onyxedutech.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           fullName,
@@ -25,11 +26,13 @@ export default function ContactModal({ open, onClose, courseName }) {
           email,
           message,
           courseName,
+          _subject: `New Contact Request: ${courseName || 'General'}`,
+          _honey: "", // Honeypot to prevent spam
         }),
       });
 
       if (!response.ok) {
-        console.error('Failed to submit the form');
+        console.error('Failed to submit to FormSubmit.co');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
