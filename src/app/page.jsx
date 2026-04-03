@@ -1083,7 +1083,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
-                  <span className="text-white text-sm sm:text-base">support@onyxedutech.com</span>
+                  <span className="text-white text-sm sm:text-base">Info@onyxedutech.com</span>
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />

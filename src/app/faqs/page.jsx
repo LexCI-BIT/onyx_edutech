@@ -24,7 +24,7 @@ const faqs = [
     },
     {
         question: "How can I contact the support team?",
-        answer: "You can reach our support team by phone at +91 8977220902 or via email at support@onyxedutech.com."
+        answer: "You can reach our support team by phone at +91 8977220902 or via email at Info@onyxedutech.com."
     }
 ]
 

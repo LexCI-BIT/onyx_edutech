@@ -117,7 +117,7 @@ const Footer = () => {
                 <div className="p-2 rounded-lg bg-[#1a4b7c]">
                   <Mail size={14} />
                 </div>
-                <span className="font-medium">support@onyxedutech.com</span>
+                <span className="font-medium">Info@onyxedutech.com</span>
               </li>
               <li className="flex items-start gap-3 hover:text-orange-400 transition-colors duration-300">
                 <div className="p-2 rounded-lg bg-[#1a4b7c] mt-0.5">
