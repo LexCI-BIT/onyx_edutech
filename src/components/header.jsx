@@ -25,7 +25,6 @@ export default function Header() {
     { name: "Why Us", href: "#why-us" },
     { name: "Pricing", href: "#pricing" },
     { name: "Community", href: "#community" },
-    { name: "Blogs", href: "#blogs" },
     { name: "Contact Us", href: "#contact" },
   ]
 
@@ -182,22 +181,11 @@ export default function Header() {
               <div className="flex items-center space-x-3 ml-4">
                 <Button
                   onClick={() => {
-                    router.push("/sign-up")
-                    setIsMenuOpen(false)
+                    window.open("https://onyx-jobcopilot.netlify.app/", "_blank")
                   }}
                   className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform shadow-lg"
                 >
-                  Sign Up
-                </Button>
-                <Button
-                  onClick={() => {
-                    router.push("/register-student")
-                    setIsMenuOpen(false)
-                  }}
-                  variant="outline"
-                  className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform bg-transparent"
-                >
-                  Login
+                  AI Copilot
                 </Button>
               </div>
             </nav>
@@ -255,22 +243,12 @@ export default function Header() {
                 <div className="pt-4 space-y-2">
                   <Button
                     onClick={() => {
-                      router.push("/sign-up")
+                      window.open("https://onyx-jobcopilot.netlify.app/", "_blank")
                       toggleMenu()
                     }}
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white hover:scale-105 transform transition-all duration-300"
                   >
-                    Sign Up
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      router.push("/register-student")
-                      toggleMenu()
-                    }}
-                    variant="outline"
-                    className="w-full border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white hover:scale-105 transform transition-all duration-300 bg-transparent"
-                  >
-                    Register as Student
+                    AI Copilot
                   </Button>
                 </div>
               </div>
