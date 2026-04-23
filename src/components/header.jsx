@@ -181,7 +181,7 @@ export default function Header() {
               <div className="flex items-center space-x-3 ml-4">
                 <Button
                   onClick={() => {
-                    window.open("https://onyx-jobcopilot.netlify.app/", "_blank")
+                    window.open("https://onyx-copilot.vercel.app/", "_blank")
                   }}
                   className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform shadow-lg"
                 >
