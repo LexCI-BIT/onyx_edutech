@@ -243,7 +243,7 @@ export default function Header() {
                 <div className="pt-4 space-y-2">
                   <Button
                     onClick={() => {
-                      window.open("https://onyx-jobcopilot.netlify.app/", "_blank")
+                      window.open("https://onyx-copilot.vercel.app/", "_blank")
                       toggleMenu()
                     }}
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white hover:scale-105 transform transition-all duration-300"
