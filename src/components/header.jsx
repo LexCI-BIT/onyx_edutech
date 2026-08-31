@@ -25,6 +25,7 @@ export default function Header() {
     { name: "Why Us", href: "#why-us" },
     { name: "Pricing", href: "#pricing" },
     { name: "Community", href: "#community" },
+    { name: "Collaboration", href: "/collaboration" },
     { name: "Contact Us", href: "#contact" },
   ]
 
@@ -185,7 +186,7 @@ export default function Header() {
                   }}
                   className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform shadow-lg"
                 >
-                  AI Copilot
+                  Onyx Copilot
                 </Button>
               </div>
             </nav>
@@ -248,7 +249,7 @@ export default function Header() {
                     }}
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white hover:scale-105 transform transition-all duration-300"
                   >
-                    AI Copilot
+                    Onyx Copilot
                   </Button>
                 </div>
               </div>
