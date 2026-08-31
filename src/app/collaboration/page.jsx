@@ -37,7 +37,7 @@ const partners = [
       "GRIET is an autonomous institution affiliated to JNTUH, accredited with NAAC A++ grade. Renowned for academic excellence, world-class labs, strong placements, and a vibrant research culture across engineering and technology disciplines.",
     highlights: ["NAAC A++ Grade", "NBA Accredited", "Top Placements Record"],
     initial: "G",
-    logo: null,
+    logo: "/griet-logo.jpg",
     website: "https://www.griet.ac.in",
   },
   {
@@ -49,7 +49,7 @@ const partners = [
       "An NAAC A+ and NBA accredited autonomous institution affiliated to JNTUH, MRECW is dedicated to empowering women engineers with quality technical education, industry exposure, and holistic development.",
     highlights: ["NAAC A+ Grade", "NBA Accredited", "Women-Focused STEM"],
     initial: "M",
-    logo: null,
+    logo: "/mrecw-logo.jpg",
     website: "https://www.mallareddyecw.com",
   },
   {
@@ -61,7 +61,7 @@ const partners = [
       "Affiliated to JNTUH and accredited with NAAC 'A' grade, ACE Engineering College is committed to producing competent engineers through industry-relevant curriculum, state-of-the-art facilities, and practical learning.",
     highlights: ["NAAC 'A' Grade", "JNTUH Affiliated", "Industry-Oriented Curriculum"],
     initial: "A",
-    logo: null,
+    logo: "/ace-logo.jpg",
     website: "https://www.aceec.ac.in",
   },
   {
@@ -73,7 +73,7 @@ const partners = [
       "GNITS is a premier women's technical institution affiliated to JNTUH, holding NAAC A+ accreditation (CGPA 3.4, valid until 2029). It offers undergraduate and postgraduate engineering and science programmes with strong industry linkages.",
     highlights: ["NAAC A+ Grade", "JNTUH Affiliated", "Women-Centric Tech Education"],
     initial: "G",
-    logo: null,
+    logo: "/gnits-logo.jpg",
     website: "https://gnits.ac.in",
   },
 ]
