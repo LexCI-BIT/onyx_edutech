@@ -25,7 +25,7 @@ export default function Header() {
     { name: "Why Us", href: "#why-us" },
     { name: "Pricing", href: "#pricing" },
     { name: "Community", href: "#community" },
-    { name: "Collaboration", href: "/collaboration" },
+    { name: "Collaboration", href: "#collaboration" },
     { name: "Contact Us", href: "#contact" },
   ]
 
