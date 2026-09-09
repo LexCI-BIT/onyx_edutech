@@ -501,58 +501,6 @@ const CoursesSection = () => {
   )
 }
 
-// ==================== WHY US SECTION ====================
-const WhyUsSection = () => {
-  return (
-    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">
-            Dream Big. Build Bold.
-          </h2>
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-orange-300 mb-4 sm:mb-6 lg:mb-8">
-            Become Career Ready.
-          </h3>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-10 lg:mb-12 px-4">
-            We're not here to burn holes in your pocket. Our industry-aligned curriculum is designed to make dreamers
-            into entrepreneurs, innovators, and job-ready professionals. Recognized by DPIIT (Start-up India), AICTE,
-            and NSDC – credibility meets creativity.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-8 mb-8 sm:mb-10 lg:mb-12">
-            {[
-              { icon: <Award className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />, text: "DPIIT Recognized" },
-              { icon: <CheckCircle className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />, text: "AICTE Approved" },
-              { icon: <Star className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />, text: "NSDC Certified" },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 lg:px-6 py-2 sm:py-3"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-orange-300">{item.icon}</div>
-                <span className="text-white font-medium text-sm sm:text-base">{item.text}</span>
-              </motion.div>
-            ))}
-          </div>
-
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 text-base sm:text-lg lg:text-xl font-semibold rounded-full">
-            <Link href="#about">Learn More About Us</Link>
-          </Button>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
 
 // ==================== PRICING SECTION ====================
 const PricingSection = () => {
@@ -1520,9 +1468,7 @@ export default function HomePage() {
       <div id="courses">
         <CoursesSection />
       </div>
-      <div id="why-us">
-        <WhyUsSection />
-      </div>
+
       <div id="pricing">
         <PricingSection />
       </div>
