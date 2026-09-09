@@ -22,7 +22,6 @@ export default function Header() {
     { name: "About Us", href: "#about" },
     { name: "How You'll Learn", href: "#how-youll-learn" },
      { name: "Courses", href: "#courses" },
-    { name: "Why Us", href: "#why-us" },
     { name: "Pricing", href: "#pricing" },
     { name: "Community", href: "#community" },
     { name: "Collaboration", href: "#collaboration" },
@@ -182,6 +181,14 @@ export default function Header() {
               <div className="flex items-center space-x-3 ml-4">
                 <Button
                   onClick={() => {
+                    window.open("https://onyx-lms-v2.vercel.app/onyx/login", "_blank")
+                  }}
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform shadow-lg"
+                >
+                  LMS
+                </Button>
+                <Button
+                  onClick={() => {
                     window.open("https://onyx-copilot.vercel.app/", "_blank")
                   }}
                   className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform shadow-lg"
@@ -242,6 +249,15 @@ export default function Header() {
                   ))}
 
                 <div className="pt-4 space-y-2">
+                  <Button
+                    onClick={() => {
+                      window.open("https://onyx-lms-v2.vercel.app/onyx/login", "_blank")
+                      toggleMenu()
+                    }}
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white hover:scale-105 transform transition-all duration-300"
+                  >
+                    LMS
+                  </Button>
                   <Button
                     onClick={() => {
                       window.open("https://onyx-copilot.vercel.app/", "_blank")
