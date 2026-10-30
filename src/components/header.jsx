@@ -187,14 +187,6 @@ export default function Header() {
                 >
                   LMS
                 </Button>
-                <Button
-                  onClick={() => {
-                    window.open("https://onyx-copilot.vercel.app/", "_blank")
-                  }}
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 transform shadow-lg"
-                >
-                  Onyx Copilot
-                </Button>
               </div>
             </nav>
 
@@ -257,15 +249,6 @@ export default function Header() {
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white hover:scale-105 transform transition-all duration-300"
                   >
                     LMS
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      window.open("https://onyx-copilot.vercel.app/", "_blank")
-                      toggleMenu()
-                    }}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white hover:scale-105 transform transition-all duration-300"
-                  >
-                    Onyx Copilot
                   </Button>
                 </div>
               </div>
